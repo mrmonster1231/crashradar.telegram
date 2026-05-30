@@ -255,6 +255,16 @@ function animate(timestamp) {
       resultText.textContent = "Demo result only. Not a real crash prediction.";
       resultCard.classList.add("revealed");
       playCrashSound();
+      
+// Rewarded interstitial
+
+show_11079056().then(() => {
+    // You need to add your user reward function here, which will be executed after the user watches the ad.
+    // For more details, please refer to the detailed instructions.
+    alert('You have seen an ad!');
+})
+
+        
       history.unshift(targetMultiplier);
       history = history.slice(0, 12);
       renderHistory();
@@ -287,6 +297,18 @@ function renderHistory() {
 }
 
 function startScan() {
+  
+// Rewarded Popup
+
+show_11079056('pop').then(() => {
+    // user watch ad till the end or close it in interstitial format
+    // your code to reward user for rewarded format
+}).catch(e => {
+    // user get error during playing ad
+    // do nothing or whatever you want
+})
+
+      
   targetMultiplier = pickCrashPoint();
   mode = "flying";
   progress = 0;
