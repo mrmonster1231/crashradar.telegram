@@ -296,7 +296,7 @@ function startScan() {
   scanButton.classList.add("hidden");
   resultCard.classList.remove("revealed");
   resultValue.textContent = "--";
-  resultText.textContent = "Scanning demo signal...";
+  resultText.textContent = "Scanning for signal...";
   scanState.textContent = "Scanning next signal";
   multiplierDisplay.textContent = "1.00x";
   startFlightSound();
